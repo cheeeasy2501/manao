@@ -18,25 +18,23 @@ const loginButton = document.querySelector("#loginButton");
 const registrationButton = document.querySelector("#registrationButton");
 const exitButton = document.querySelector("#exitButton");
 
-if(loginButton) {
+if (loginButton) {
   loginButton.addEventListener("click", (e) => {
     e.preventDefault();
     login(loginAction, loginSelectors);
   });
 }
 
-if(registrationButton) {
+if (registrationButton) {
   registrationButton.addEventListener("click", (e) => {
     e.preventDefault();
     registration(registrationAction, registrationSelectors);
   });
 }
 
-if(exitButton) {
+if (exitButton) {
   exitButton.addEventListener("click", (e) => {
     e.preventDefault();
     exit(exitAction);
   });
 }
-
-
