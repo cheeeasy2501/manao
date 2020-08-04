@@ -6,7 +6,7 @@ if ($databaseInstance->isExists()) {
     $login = $_POST['login'];
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $password = md5('соль' . $_POST['password']);
+    $password = md5('соль'.$_POST['password']);
 
     $database = $databaseInstance->loadDatabase();
     $errors = $databaseInstance->beforeRegistration($database, $login, $email);

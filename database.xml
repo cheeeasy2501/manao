@@ -1,3 +1,4 @@
 <?xml version="1.0" standalone="yes"?>
 <root>
-    <user><name>testname</name><email>administrator@test.ru</email><login>testlogin</login><password>b1c21019afd435194216c87f414e6cce</password><session> </session></user><user><name/><email>administrator@mail.ru</email><login>administrator</login><password>5dc030f347a3f881f144cb9631b066e5</password><session>wOUdgJA5nGJ9eoM</session></user></root>
+    <user><login>test</login><email>test@mail.ru</email><password>f2a769b1438df65378a82efcd57e0570</password><session/></user>
+<user><name/><email>email@mail.ru</email><login>email1234</login><password>94f5b6f8d0523edb15dca05f78f292ab</password><session> </session></user><user><name/><email>test2@mail.ri</email><login>test2</login><password>4cfc5595ed7fc88840670219111afdce</password><session> </session></user><user><name/><email>test3@mail.ru</email><login>test3</login><password>de76035cebed25a26b3c1a9a65db076c</password><session>T6feDn0iuIpHyoR</session></user></root>

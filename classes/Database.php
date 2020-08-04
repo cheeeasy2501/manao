@@ -24,9 +24,9 @@ class Database
         return simplexml_load_file($this->xml_path);
     }
 
-
     public function checkUserByPassword($database, $login, $password)
     {
+        $result = null;
         foreach ($database->user as $user) {
             if ($login == $user->login && $password == $user->password) {
                 $result = $user;
@@ -59,13 +59,20 @@ class Database
 
     public function beforeRegistration($database, $login, $email)
     {
+        $errors = [];
+
+        if(!preg_match("/^[A-Za-z0-9]+$/", $login)) {
+            $errors['login'] = "Wrong login! <br /> Use only A-Z  letters and numbers!";
+            return $errors;
+        }
+
         foreach ($database->user as $user) {
             if ($user->login == $login || $user->email == $email) {
                 if ($user->login == $login) {
-                    $errors['login'] = 'Login is already exists!';
+                    $errors['login'] = "Login is already exists!";
                 }
                 if ($user->email == $email) {
-                    $errors['email'] = 'Email is already exists!';
+                    $errors['email'] = "Email is already exists!";
                 }
             }
             if ($errors) {
@@ -82,7 +89,7 @@ class Database
             $new_user->addChild('name', $name);
             $new_user->addChild('email', $email);
             $new_user->addChild('login', $login);
-            $new_user->addChild('password', md5('соль' . $password));
+            $new_user->addChild('password', $password);
             $new_user->addChild('session', ' ');
             $database->asXML($this->xml_path);
             return;
